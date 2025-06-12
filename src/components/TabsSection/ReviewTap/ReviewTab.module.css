@@ -1,0 +1,27 @@
+.reviewsSection {
+
+    p.comments {
+        font-family: "Exo", sans-serif !important;
+        font-weight: 600;
+    }
+
+    .rateNum {
+        font-size: 2.1rem;
+        font-weight: 600;
+        margin-bottom: 0 !important;
+        font-family: "Exo", sans-serif ;
+
+
+    }
+
+    .ratingDiv {
+        p {
+            font-family: "Jost", sans-serif;
+            font-weight: 400;
+            font-size: 0.8rem;
+            color: #555555;
+            margin-bottom: 0 !important;
+        }
+    }
+
+}

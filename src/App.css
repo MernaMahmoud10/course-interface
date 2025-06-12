@@ -1,0 +1,17 @@
+.MuiTabs-root {
+
+    .Mui-selected {
+        background-color: #F5F5F5 !important;
+    }
+
+    .MuiTab-colorNeutral {
+        border-right: 1px solid #EAEAEA !important;
+        font-weight: 600 !important;
+        font-family: "Exo", sans-serif !important;
+        color: black !important;
+
+        &:last-child {
+            border-right: 1px solid transparent !important;
+        }
+    }
+}

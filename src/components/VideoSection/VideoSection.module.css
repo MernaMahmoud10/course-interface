@@ -1,0 +1,64 @@
+.playerContainer {
+    position: relative;
+
+}
+
+.navBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background-color: #BCBEC0;
+    color: #BCBEC0;
+    border: none;
+    padding: 10px 16px;
+    cursor: pointer;
+    z-index: 2;
+    transition: background-color 0.3s;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .circleDiv {
+
+        height: 30px;
+        width: 30px;
+        background-color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+    }
+
+    &.prev {
+        left: 0px;
+    }
+
+    &.next {
+        right: 0px;
+    }
+
+}
+
+.playBtn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: transparent;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    border: none;
+
+    svg {
+        fill: #fff;
+        border-radius: 50%;
+        font-size: 55px;
+
+        path {
+            fill: #BCBEC0;
+        }
+    }
+}

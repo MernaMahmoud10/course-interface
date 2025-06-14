@@ -1,10 +1,10 @@
 import { AccordionDetails, AccordionSummary, Box, Typography } from "@mui/material";
 import { useState } from "react";
+import { sections } from "../../assets/data/dumyData";
 import Accordion from '@mui/material/Accordion';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import CloseIcon from '@mui/icons-material/Close';
 import Session from "./Session";
-import { sections } from "../../assets/data/dumyData";
 
 export default function CourseContent() {
   const [expanded, setExpanded] = useState<boolean>(true);

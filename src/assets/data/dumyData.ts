@@ -29,4 +29,18 @@ export const sections = [
 ]
 export const lectureOptions = ['All lectures', 'Math', 'Science', 'History'];
 export const sortOptions = ['Most recent', 'Oldest', 'Most popular'];
+export const steps = [
+    {
+        label: 'How it started',
+        duration: "2 mins"
+    },
+    {
+        label: 'Scrum master in scrum guide',
+        duration: "2 mins"
+    },
+    {
+        label: 'Coaching the team',
+        duration: "2 mins"
+    },
+];
 

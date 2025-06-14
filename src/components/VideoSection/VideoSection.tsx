@@ -1,8 +1,9 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable react-hooks/exhaustive-deps */
+
 import { Box, Typography } from "@mui/material";
-import { useContext, useEffect, useRef, useState } from "react";
-import { VideoTimeContext, type contextInterface } from "../../context/VideoTimeContext";
+import { useContext, useState } from "react";
+import { VideoTimeContext } from "../../context/VideoTimeContext";
+import { videos } from "../../assets/data/dumyData";
+import type { contextInterface } from "../../assets/helpers/interfaces";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -17,12 +18,9 @@ interface stateInterface {
 export default function VideoSection() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const { setVideoTime } = useContext(VideoTimeContext) as contextInterface
-    const [playing, _setPlaying] = useState(false);
-    const videos = [
-        "https://www.youtube.com/watch?v=BtjdIZTcvtE&t=1s",
-        "/addNote.webm" //You can use local server-hosted .mp4 files, Dropbox links
-    ];
-   
+    const currentVideo = videos[currentIndex];
+
+
     const nextVideo = () => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % videos.length);
     };
@@ -33,25 +31,10 @@ export default function VideoSection() {
         );
     };
 
-    const currentVideo = videos[currentIndex];
-    const [progressTime, setProgressTime] = useState(0);
-    const playerRef = useRef<ReactPlayer | null>(null);
     const handleProgress = (state: stateInterface) => {
-
-        setProgressTime(state.playedSeconds);
-    };
-    
-    const handleGetTimeClick = () => {
-        if (playerRef.current) {
-            const currentTime = playerRef.current?.getCurrentTime();
-            setVideoTime(moment(currentTime * 1000).format("mm:ss"));
-        }
+        setVideoTime(moment(state.playedSeconds * 1000).format("mm:ss"));
     };
 
-    useEffect(() => {
-        handleGetTimeClick()
-    }, [progressTime]);
-    
     return (
         <>
             <Box className="px-1" component={"div"} sx={{ backgroundColor: "#BCBEC0", color: "white" }}>
@@ -62,10 +45,9 @@ export default function VideoSection() {
 
                 <div className={style?.playerContainer}>
 
-                    <ReactPlayer onProgress={handleProgress} ref={playerRef} height={"444px"} controls className=" w-100" url={currentVideo} playing={playing} />
+                    <ReactPlayer onProgress={handleProgress} height={"444px"} controls className=" w-100" url={currentVideo} />
                     <button className={`${style.navBtn} ${style.prev}`} onClick={prevVideo}><div className={style?.circleDiv}><ArrowBackIosNewIcon /></div></button>
                     <button className={`${style.navBtn} ${style.next}`} onClick={nextVideo}><div className={style?.circleDiv}><ArrowForwardIosIcon /></div></button>
-                    {/* <button className={style?.playBtn} onClick={togglePlay}>{playing ? null : <PlayCircleIcon />}</button> */}
 
                 </div>
             </Box>

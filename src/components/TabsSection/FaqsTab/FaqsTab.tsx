@@ -4,12 +4,13 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Box } from '@mui/material';
+import { users } from '../../../assets/data/dumyData';
 
 export default function FaqsTab() {
-  const AccordionsArr = [1, 2, 3, 4]
+
   return (
     <Box ml={2}>
-      {AccordionsArr?.map((_item, index) =>
+      {users?.map((_item, index) =>
         <Box mb={2} key={index} >
           <Accordion
             defaultExpanded={index == 1}

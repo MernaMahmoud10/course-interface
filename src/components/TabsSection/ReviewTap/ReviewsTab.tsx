@@ -1,18 +1,12 @@
 import { Avatar, Box, Divider, LinearProgress, Rating, SvgIcon, Typography } from "@mui/material"
+import { ratingsData, users } from "../../../assets/data/dumyData";
 import style from "./ReviewTab.module.css"
 import StarIcon from '@mui/icons-material/Star';
 import avatar from "../../../assets/images/avatar.jpg"
 import PaginationComponent from "./PaginationComponent";
 
 export default function ReviewsTab() {
-    const ratingsData = [
-        { stars: 5, percentage: 90 },
-        { stars: 4, percentage: 5 },
-        { stars: 3, percentage: 2 },
-        { stars: 2, percentage: 2 },
-        { stars: 1, percentage: 1 },
-    ];
-    const users = [1, 2, 3]
+
     return (
         <Box component={"section"} className={style?.reviewsSection} ml={2} width="92%">
             <Typography className={`text-black ${style?.comments} mb-3`}>Comments</Typography>
@@ -89,9 +83,9 @@ export default function ReviewsTab() {
                 </>
             )}
 
-           <Box display="flex" justifyContent="center">
-             <PaginationComponent />
-           </Box>
+            <Box display="flex" justifyContent="center">
+                <PaginationComponent />
+            </Box>
         </Box>
     )
 }

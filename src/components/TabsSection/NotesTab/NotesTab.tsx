@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Box, IconButton, Stack, Typography, } from "@mui/material";
-import { VideoTimeContext, type contextInterface } from "../../../context/VideoTimeContext";
-import type { INote } from "../../../assets/helpers/interfaces";
+import { VideoTimeContext } from "../../../context/VideoTimeContext";
+import type { contextInterface, INote } from "../../../assets/helpers/interfaces";
 import AddIcon from '@mui/icons-material/Add';
 import AddNote from "./AddNote";
 import CustomDropDown from "./CustomDropDown";
@@ -16,7 +16,6 @@ export default function NotesTab() {
     const [textAreaAppeared, setTextAreaAppeared] = useState<boolean>(false);
     const { videoTime } = useContext(VideoTimeContext) as contextInterface
     const [notesArr, setNotesArr] = useState<INote[]>([]);
-    const localStoratgNotes = localStorage.getItem("notes")
     const [myNote, setmyNote] = useState<string>("")
 
 
@@ -33,14 +32,11 @@ export default function NotesTab() {
     }
 
     useEffect(() => {
-        let myNotes = []
+        const localStoratgNotes = localStorage.getItem("notes")
         if (localStoratgNotes) {
-            myNotes = JSON.parse(localStoratgNotes || "")
-            setNotesArr([...myNotes])
+            setNotesArr(JSON.parse(localStoratgNotes))
         }
-        else
-            setNotesArr([])
-    }, [localStoratgNotes]);
+    }, []);
 
 
 

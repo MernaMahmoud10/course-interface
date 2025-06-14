@@ -4,26 +4,11 @@ import Accordion from '@mui/material/Accordion';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import CloseIcon from '@mui/icons-material/Close';
 import Session from "./Session";
+import { sections } from "../../assets/data/dumyData";
 
 export default function CourseContent() {
   const [expanded, setExpanded] = useState<boolean>(true);
-  const sections = [
-    {
-      id: 1,
-      name: "Section 1",
-      title: "React Intro"
-    },
-    {
-      id: 2,
-      name: "Section 2",
-      title: "React Router"
-    },
-    {
-      id: 1,
-      name: "Section 3",
-      title: "React Hooks"
-    },
-  ]
+
   return (
     <Box sx={{ border: "1px solid #F5F5F5" }}>
       <Accordion

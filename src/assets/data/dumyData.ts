@@ -10,21 +10,23 @@ export const ratingsData = [
     { stars: 1, percentage: 1 },
 ];
 export const users = [1, 2, 3]
- export const sections = [
+export const sections = [
     {
-      id: 1,
-      name: "Section 1",
-      title: "React Intro"
+        id: 1,
+        name: "Section 1",
+        title: "React Intro"
     },
     {
-      id: 2,
-      name: "Section 2",
-      title: "React Router"
+        id: 2,
+        name: "Section 2",
+        title: "React Router"
     },
     {
-      id: 1,
-      name: "Section 3",
-      title: "React Hooks"
+        id: 1,
+        name: "Section 3",
+        title: "React Hooks"
     },
-  ]
+]
+export const lectureOptions = ['All lectures', 'Math', 'Science', 'History'];
+export const sortOptions = ['Most recent', 'Oldest', 'Most popular'];
 

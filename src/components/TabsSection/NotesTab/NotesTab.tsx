@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Box, IconButton, Stack, Typography, } from "@mui/material";
 import { VideoTimeContext } from "../../../context/VideoTimeContext";
+import { lectureOptions, sortOptions } from "../../../assets/data/dumyData";
 import type { contextInterface, INote } from "../../../assets/helpers/interfaces";
 import AddIcon from '@mui/icons-material/Add';
 import AddNote from "./AddNote";
@@ -9,14 +10,13 @@ import SavedNotes from "./SavedNotes";
 
 
 export default function NotesTab() {
-    const lectureOptions = ['All lectures', 'Math', 'Science', 'History'];
-    const sortOptions = ['Most recent', 'Oldest', 'Most popular'];
+
     const [selectedLecture, setSelectedLecture] = useState<string>("");
     const [selectedSort, setSelectedSort] = useState<string>("");
     const [textAreaAppeared, setTextAreaAppeared] = useState<boolean>(false);
-    const { videoTime } = useContext(VideoTimeContext) as contextInterface
     const [notesArr, setNotesArr] = useState<INote[]>([]);
     const [myNote, setmyNote] = useState<string>("")
+    const { videoTime } = useContext(VideoTimeContext) as contextInterface
 
 
     const handleAddNote = () => {
